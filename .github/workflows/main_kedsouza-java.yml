@@ -53,6 +53,7 @@ jobs:
           package: '*.jar'
           
   swap:
+      needs: deploy
       runs-on: ubuntu-latest
 
       steps:
