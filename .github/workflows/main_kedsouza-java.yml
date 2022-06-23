@@ -49,7 +49,7 @@ jobs:
         with:
           app-name: 'kedsouza-java'
           slot-name: 'stage'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_2047179EAA964C459D3D323EF108B1E4 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_3A25367756504372AB89640A1E5DB432 }}
           package: '*.jar'
           
   swap:
