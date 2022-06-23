@@ -48,6 +48,21 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'kedsouza-java'
-          slot-name: 'Production'
+          slot-name: 'stage'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_2047179EAA964C459D3D323EF108B1E4 }}
           package: '*.jar'
+          
+  swap:
+      runs-on: ubuntu-latest
+
+      steps:
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Azure CLI Action
+        uses: Azure/cli@v1
+        with:
+          # Specify the script here
+          inlineScript: az webapp deployment slot swap  -g kedsouza-linux -n kedsouza-java --slot stage --target-slot production
