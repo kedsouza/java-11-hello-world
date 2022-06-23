@@ -21,4 +21,4 @@ jobs:
       uses: Azure/cli@v1
       with:
         # Specify the script here
-        inlineScript: az account show
+        inlineScript: az webapp deployment slot swap  -g kedsouza-linux -n kedsouza-java --slot staging --target-slot production
