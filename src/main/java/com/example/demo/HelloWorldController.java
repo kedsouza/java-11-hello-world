@@ -13,7 +13,7 @@ public class HelloWorldController
     {  
          try
         {
-            TimeUnit.SECONDS.sleep(240);
+            TimeUnit.SECONDS.sleep(30);
         }
         catch(InterruptedException ex)
         {
@@ -28,7 +28,7 @@ public class HelloWorldController
     {  
         try
         {
-            TimeUnit.SECONDS.sleep(240);
+            TimeUnit.SECONDS.sleep(30);
         }
         catch(InterruptedException ex)
         {
