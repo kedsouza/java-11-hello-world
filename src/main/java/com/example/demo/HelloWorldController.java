@@ -3,9 +3,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;  
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.HttpStatus;
-
-
-
+import java.util.concurrent.TimeUnit;
 
 @RestController  
 public class HelloWorldController   
@@ -20,6 +18,14 @@ public class HelloWorldController
     @RequestMapping("/warmup")  
     public String warmup()   
     {  
+        try
+        {
+            TimeUnit.SECONDS.sleep(120);
+        }
+        catch(InterruptedException ex)
+        {
+            System.out.println("Your message here");
+        }
         return "Success!";
     }  
 }  
