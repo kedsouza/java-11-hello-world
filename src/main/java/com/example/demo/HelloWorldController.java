@@ -11,6 +11,14 @@ public class HelloWorldController
     @RequestMapping("/")  
     public ResponseEntity hello()   
     {  
+         try
+        {
+            TimeUnit.SECONDS.sleep(240);
+        }
+        catch(InterruptedException ex)
+        {
+            System.out.println("Your message here");
+        }
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
         //return new ResponseEntity<String>(HttpStatus.BAD_REQUEST);  
     }  
@@ -20,7 +28,7 @@ public class HelloWorldController
     {  
         try
         {
-            TimeUnit.SECONDS.sleep(120);
+            TimeUnit.SECONDS.sleep(240);
         }
         catch(InterruptedException ex)
         {
